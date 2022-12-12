@@ -1,0 +1,206 @@
+.title {
+    font-size: 4rem;
+    margin: 0rem;
+}
+
+.title strong{
+    color: #0070f3;
+    font-weight: bolder;
+}
+
+
+.description {
+    line-height: 1.5;
+    font-size: 1rem;
+    max-width: 45rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+    margin: 1rem 0;
+}
+
+
+.box h1 {
+    margin: 0rem;
+}
+
+.box h2 {
+    margin: 0.3rem 0rem;
+}
+
+.box strong{
+    color: #0070f3;
+    font-weight: bolder;
+    padding: 0 0.4rem;
+}
+
+.highlight{
+    color: #0070f3;
+    font-weight: bolder;
+    padding: 0rem;
+}
+
+.box ol {
+    margin: 0rem;
+    padding: 1rem 1rem 0rem;
+}
+
+.box li {
+    color: #0070f3;
+    font-weight: bold;
+    width: 50%;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.nextButton {
+    padding: 0.8rem;
+    width: 8rem;
+    text-align: center;
+    margin-left: auto;
+    background-color: #0070f3;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: #0070f3 0px;
+    cursor: pointer;
+}
+
+.flexRow {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.cross {
+    font-size: 0.8rem;
+    padding: 0rem 1rem;
+    display: inline;
+    margin: auto 0rem;
+    padding-top: -10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mapping {
+    font-weight: normal;
+    font-size: small;
+    color: #111;
+    margin: 3px;
+}
+
+.money {
+    color: #85bb65;
+    display: inline;
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.warning {
+    color: red;
+    margin: 0rem;
+    font-size: x-small;
+    padding-bottom: 1rem;
+}
+
+.message {
+    color: #0070f3;
+}
+
+.iconButton {
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.4rem;
+    outline: none;
+    border: 2px solid #0070f3;
+}
+.leftBox {
+    margin-left: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.greenButton {
+    background-color: #67cf00;
+    padding: 0.8rem;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: #67cf00 0px;
+    cursor: pointer;
+}
+
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+.card {
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    max-width: 300px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+    color: #0070f3;
+    border-color: #0070f3;
+}
+
+.card h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.logo {
+    height: 1em;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        width: 100%;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .card,
+    .footer {
+        border-color: #222;
+    }
+
+    .code {
+        background: #111;
+    }
+
+    .logo img {
+        filter: invert(1);
+    }
+}
