@@ -117,7 +117,7 @@ export default function Home() {
           Welcome to <strong>Split Fair 🤑</strong>
         </h1>
         <p className={styles.description}>
-          This tool helps you to split your food fares fairy!
+          This tool helps you to split your food fares fairly!
           You can Add People, Items, and divide each item by selecting involved people.
           This makes it fare for all the people, instead of diving the whole amount by
           number of total people.
