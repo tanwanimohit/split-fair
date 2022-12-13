@@ -6,6 +6,7 @@ const Layout = ({ children }) => {
         <div className={styles.container}>
             <Head>
                 <title>Split Fair</title>
+                <link rel="manifest" href="/manifest.json" />
                 <meta name="description" content="Split your fares fairly." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

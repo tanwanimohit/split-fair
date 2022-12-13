@@ -71,7 +71,7 @@ export default function Home() {
       let totalPeople = peopleMapping[index].filter(item => item).length
       peopleMapping[index].map((mapping, mappingIndex) => {
         if (mapping) {
-          totalAmountPerson[mappingIndex] += (item / totalPeople)
+          totalAmountPerson[mappingIndex] += Number.parseFloat((item / totalPeople).toFixed(2))
         }
       })
       totalAmount += parseFloat(item);
