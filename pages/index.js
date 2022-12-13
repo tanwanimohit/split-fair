@@ -53,6 +53,19 @@ export default function Home() {
     setPeopleMapping(tempArray)
   }
 
+  const roundOff = (num, places) => {
+    const x = Math.pow(10,places);
+    return Math.round(num * x) / x;
+  }
+
+  const getTotalPrice = () => {
+    let totalAmount = 0
+    prices.map((item, index) => {
+      totalAmount += parseFloat(item);
+    });
+    return roundOff(totalAmount, 2)
+  }
+
   const generateReport = (restaurant, date, mobile, upi, message) => {
     // Using LocalStack as I am too lazy to add context API support.
     localStorage.clear()
@@ -71,7 +84,7 @@ export default function Home() {
       let totalPeople = peopleMapping[index].filter(item => item).length
       peopleMapping[index].map((mapping, mappingIndex) => {
         if (mapping) {
-          totalAmountPerson[mappingIndex] += Number.parseFloat((item / totalPeople).toFixed(2))
+          totalAmountPerson[mappingIndex] += roundOff((item / totalPeople), 2)
         }
       })
       totalAmount += parseFloat(item);
@@ -86,13 +99,14 @@ export default function Home() {
       <>
         <div className={styles.box}>
           <h1>Items</h1>
+          {prices && prices.length > 0 ? <span className={styles.highlight}>Total = {getTotalPrice()}₹</span>: null}
         </div>
         <div className={styles.box}>
           <ol>
             {items.map((name, index) => (
               <div className={styles.flexRow} key={index}>
-                <li>{name} <span className={styles.money}> {prices[index]} ₹</span> (
-                  <span>
+                <li>{name} <span className={styles.money}> {prices[index]}₹ </span> (
+                  <span className={styles.flexBox}>
                     {
                       peopleMapping[index].map((item, itemIndex) => (
                         item ? <span key={itemIndex} className={styles.mapping}>{people[itemIndex]}</span> : null
@@ -143,7 +157,7 @@ export default function Home() {
 
       {people && people.length >= 2 ? getItems() : <p className={styles.message}>Add two or more people to add items ✨</p>}
       
-      {items && items.length > 0 ? <div className={styles.footer}><button type="button" className={styles.greenButton} onClick={() => setDataModal(!dataModal)}>Generate Report</button></div> : null}
+      {items && items.length > 0 ? <div className={styles.footer}><button type="button" className={styles.greenButton} onClick={() => setDataModal(!dataModal)}>Generate Report</button></div> : null}      
       {peopleModal ? <PeopleModal isOpen={peopleModal} setValue={setPeopleModal} addPeople={addPeople} /> : null}
       {dataModal ? <InfoModal isOpen={dataModal} setValue={setDataModal} addData={generateReport} /> : null}
       {itemModal ? <ItemModal isOpen={itemModal} setValue={setItemModal} setItems={setItemDetails} people={people} /> : null}

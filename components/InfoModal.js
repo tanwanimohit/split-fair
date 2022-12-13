@@ -29,8 +29,8 @@ const InfoModal = ({ isOpen, setValue, addData }) => {
             <input type="text" name="upi" autoComplete="off" required placeholder="Enter UPI ID" onChange={e => setUpi(e.target.value)} />
             <input type="textarea" name="message" autoComplete="off" required placeholder="Enter Personalized message" onChange={e => setMessage(e.target.value)} />
             <div className={styles.buttons}>
+              <button type="button" className={styles.button} onClick={() => setValue(false)}>Close</button>
               <button className={styles.button} onClick={generateReport}>Continue</button>
-              <button className={styles.button} onClick={() => setValue(false)}>Close</button>
             </div>
         </div>
     </div>

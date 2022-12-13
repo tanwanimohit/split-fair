@@ -27,8 +27,8 @@ const PeopleModal = ({ isOpen, setValue, addPeople }) => {
             <form>
               <input type="text" autoFocus="autofocus" name="person" autoComplete="off" required placeholder="Enter Person's Name" onChange={e => setPerson(e.target.value)} />
               <div className={styles.buttons}>
+                <button type="button" className={styles.button} onClick={() => setValue(!isOpen)}>Close</button>
                 <button type="submit" className={styles.button} disabled={enableButton()} onClick={addPerson}>Add</button>
-                <button className={styles.button} onClick={() => setValue(!isOpen)}>Close</button>
               </div>
             </form>
         </div>
