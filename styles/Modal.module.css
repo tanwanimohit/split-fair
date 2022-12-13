@@ -101,3 +101,11 @@
     display: flex;
     flex-flow: wrap;
 }
+
+@media (prefers-color-scheme: dark) {
+    .box {
+        background: #161625;
+        color: white;
+    }
+  }
+  
