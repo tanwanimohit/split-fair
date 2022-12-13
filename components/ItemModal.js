@@ -35,13 +35,15 @@ const ItemModal = ({ isOpen, setValue, setItems, people }) => {
             <input type="number" name="price" autoComplete="off" placeholder="Enter Item Price" required onChange={e => setPrice(e.target.value)} />
             <div>
               <h3>Select People</h3>
-              {
-                people.map((name, index) => (
-                  <div key={index} className={personSelected[index] ? styles.tagSelected : styles.tag} onClick={() => updateItemPeople(index)}>
-                    {name}
-                  </div>
-                ))
-              }
+              <div className={styles.flexWrap}>
+                {
+                  people.map((name, index) => (
+                    <div key={index} className={personSelected[index] ? styles.tagSelected : styles.tag} onClick={() => updateItemPeople(index)}>
+                      {name}
+                    </div>
+                  ))
+                }
+              </div>
             </div>
             <div className={styles.buttons}>
               <button className={styles.button} disabled={enableButton()} onClick={setItemDetails}>Add</button>

@@ -96,3 +96,8 @@
     cursor: pointer;   
     user-select: none;
 }
+
+.flexWrap {
+    display: flex;
+    flex-flow: wrap;
+}
