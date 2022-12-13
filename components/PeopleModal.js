@@ -23,12 +23,14 @@ const PeopleModal = ({ isOpen, setValue, addPeople }) => {
   return (
     <div className={styles.modal} >
         <div className={styles.box}>
-            <h1>Add People</h1> 
-            <input type="text" name="person" autoComplete="off" required placeholder="Enter Person's Name" onChange={e => setPerson(e.target.value)} />
-            <div className={styles.buttons}>
-              <button className={styles.button} disabled={enableButton()} onClick={addPerson}>Add</button>
-              <button className={styles.button} onClick={() => setValue(!isOpen)}>Close</button>
-            </div>
+            <h1>Add People</h1>
+            <form>
+              <input type="text" autoFocus="autofocus" name="person" autoComplete="off" required placeholder="Enter Person's Name" onChange={e => setPerson(e.target.value)} />
+              <div className={styles.buttons}>
+                <button type="submit" className={styles.button} disabled={enableButton()} onClick={addPerson}>Add</button>
+                <button className={styles.button} onClick={() => setValue(!isOpen)}>Close</button>
+              </div>
+            </form>
         </div>
     </div>
   )

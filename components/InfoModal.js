@@ -23,7 +23,7 @@ const InfoModal = ({ isOpen, setValue, addData }) => {
     <div className={styles.modal} >
         <div className={styles.box}>
             <h1>Optional Details</h1> 
-            <input type="text" name="restaurant" autoComplete="off" required placeholder="Enter Restaurant's Name" onChange={e => setRestaurant(e.target.value)} />
+            <input type="text" autoFocus="autofocus" name="restaurant" autoComplete="off" required placeholder="Enter Restaurant's Name" onChange={e => setRestaurant(e.target.value)} />
             <input type="date" name="date" autoComplete="off" required placeholder="Enter Date" onChange={e => setDate(e.target.value)} />
             <input type="tel" name="mobile" autoComplete="off" required placeholder="Enter Mobile" onChange={e => setMobile(e.target.value)} />
             <input type="text" name="upi" autoComplete="off" required placeholder="Enter UPI ID" onChange={e => setUpi(e.target.value)} />
